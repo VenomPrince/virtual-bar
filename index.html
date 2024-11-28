@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+            <h1>Welcome</h1>
+            <div class="name-input">
+                <input type="text" id="guestName" placeholder="Enter your name">
+                <button onclick="enterBar()">Enter</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content hidden" id="mainContent">
+        <div class="top-bar">
+            <div class="guest-info">Welcome, <span id="displayName">Guest</span></div>
+            <div class="audio-controls">
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+            <div class="time-indicator"><span id="timer">01:00</span></div>
+        </div>
+
+        <div class="menu-section">
+            <div class="menu-categories">
+                <div class="category">
+                    <h3>Water</h3>
+                    <ul>
+                        <li onclick="selectDrink('Ice Cold Water')">Ice Cold Water</li>
+                        <li onclick="selectDrink('Room Temperature Water')">Room Temperature Water</li>
+                        <li onclick="selectDrink('Hot Water with Lemon')">Hot Water with Lemon</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Soft Drinks</h3>
+                    <ul>
+                        <li onclick="selectDrink('Cola')">Cola</li>
+                        <li onclick="selectDrink('Lemon Soda')">Lemon Soda</li>
+                        <li onclick="selectDrink('Ginger Ale')">Ginger Ale</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Cocktails</h3>
+                    <ul>
+                        <li onclick="selectDrink('Virtual Sunrise')">Virtual Sunrise</li>
+                        <li onclick="selectDrink('Digital Martini')">Digital Martini</li>
+                        <li onclick="selectDrink('Pixel Perfect')">Pixel Perfect</li>
+                    </ul>
+                </div>
+                <div class="category">
+                    <h3>Custom</h3>
+                    <div class="custom-order">
+                        <input type="text" id="customDrink" placeholder="Your custom drink">
+                        <button onclick="orderCustomDrink()">Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="butler-message" id="butlerMessage">
+            <p class="typing-text"></p>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>Bar Chat</h3>
+                <span class="online-count">12 strangers here</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Say something...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <iframe 
+                id="player"
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/ZSrVznkaMEM?si=dnTL00dC3CUDPUxP&enablejsapi=1" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <audio id="backgroundMusic" loop>
+            <source src="https://cdn.pixabay.com/download/audio/2022/02/22/audio_d0a13f69d2.mp3?filename=jazz-happy-110855.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
